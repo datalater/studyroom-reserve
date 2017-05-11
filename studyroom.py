@@ -11,6 +11,8 @@ import getpass
 class Reserver():
 
     def __init__(self):
+        """사용자로부터 사용자로부터 고려대학교 포탈 id와 password를 입력받는다"""
+
         # self.user_id = input('ID를 입력하세요: ')
         # self.user_pwd = getpass.getpass('PWD를 입력하세요(Not echoing): ')
         self.user_id = 'kjs297'
@@ -19,6 +21,7 @@ class Reserver():
 
     def portal_login(self):
         """입력 받은 id와 pwd로 로그인한다"""
+
         ### 고려대학교 포탈에 GET방식으로 접속한다.
 
         print("(1/5) URL에 접속합니다...")
@@ -41,7 +44,10 @@ class Reserver():
         btn_login = self.driver.find_element_by_class_name('submit')
         ActionChains(self.driver).click(btn_login).perform()
 
+
     def infolife_click(self):
+        """공간예약/관리 및 예약신청 버튼을 최종 클릭한다."""
+
         ### 로그인 후 상단 바에 있는 정보생활 버튼을 클릭한다.
 
         print("(3/5) LOGIN이 완료되었습니다...")
@@ -68,7 +74,9 @@ class Reserver():
 
         print("(4/5) 공간예약/관리 페이지에 접속되었습니다...")
 
+
     def autosearch_click(self):
+        """자동검색 버튼을 클릭한다."""
 
         time.sleep(3.5)
 
@@ -84,16 +92,19 @@ class Reserver():
 
         self.driver.switch_to_window(self.driver.window_handles[0])
 
+
     def search(self):
+        """검색 옵션을 설정하고 검색 버튼을 누른다."""
+        pass
 
 
 
+# 예약신청 URL
+# http://cafm.korea.ac.kr/archibus/rm_reserve.jsp?bl_id=011510&rm_id=302&date=2017-05-11&value13=kjs297&time_start=19:00&ti///me_//end=22:00&today_week=%EB%AA%A9
 
 if __name__ == '__main__':
-    ### 사용자로부터 고려대학교 포탈 id와 password를 입력받는다.
 
     reserver = Reserver()
     reserver.portal_login()
     reserver.infolife_click()
     reserver.autosearch_click()
-    
