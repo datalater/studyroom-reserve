@@ -14,9 +14,8 @@ class Reserver():
         """사용자로부터 사용자로부터 고려대학교 포탈 id와 password를 입력받는다"""
 
         # self.user_id = input('ID를 입력하세요: ')
-        # self.user_pwd = getpass.getpass('PWD를 입력하세요(Not echoing): ')
         self.user_id = 'kjs297'
-        self.user_pwd = 'rheowltjq8454'
+        self.user_pwd = getpass.getpass('PWD를 입력하세요(Not echoing): ')
 
 
     def portal_login(self):
